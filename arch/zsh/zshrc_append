@@ -1,0 +1,10 @@
+# aliases
+alias cat='bat'
+alias ls='lsd'
+alias ll='ls -l'
+alias la='ls -A'
+alias l='ls -CF'
+alias vim='nvim'
+
+# run starship
+eval "$(starship init zsh)"

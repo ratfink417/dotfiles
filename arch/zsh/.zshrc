@@ -217,7 +217,6 @@ if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     export LS_COLORS="$LS_COLORS:ow=30;44:" # fix ls color for folders with 777 permissions
 
-    alias ls='lsd'
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
 
@@ -240,20 +239,9 @@ if [ -x /usr/bin/dircolors ]; then
     zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 fi
 
-# some more ls aliases
-alias ll='ls -l'
-alias la='ls -A'
-alias l='ls -CF'
-
-# aliases for nvim
-alias vim='nvim'
-
-# aliases for cat
-alias cat='batcat'
-alias bat='batcat'
-
 # add .local/bin to the $PATH variable
-path+=('/home/johnny/.local/bin')
+local_bin=$HOME/.local/bin
+path+=($local_bin)
 
 # enable auto-suggestions based on the history
 if [ -f /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
@@ -266,4 +254,3 @@ fi
 if [ -f /etc/zsh_command_not_found ]; then
     . /etc/zsh_command_not_found
 fi
-eval "$(starship init zsh)"
