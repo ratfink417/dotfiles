@@ -21,15 +21,17 @@ makepkg -si
 popd
 
 # install utilities that are going to be needed
-sudo pacman -Sy wget git bat fzf jq unzip lsd 
+sudo pacman -Sy wget git bat fzf jq unzip lsd man-db
+
+# install man pages
+sudo mandb
 
 # select a nerdfont to install
 font_choice='IBMPlexMono.zip'
 
 # install fontconfig and install a nerd font
 sudo pacman -Sy fontconfig 
-wget -O /tmp/font.zip \
-https://raw.githubusercontent.com/ryanoasis/nerd-fonts/releases/latest/download/$font_choice
+wget -O /tmp/font.zip https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/IBMPlexMono.zip
 unzip /tmp/font.zip -d $local_fonts_dir
 fc-cache -f -v
 
