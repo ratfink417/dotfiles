@@ -1,6 +1,7 @@
 #!/usr/bin/bash
 # save the working dir in case we ever get lost and need to return
 working_dir=$PWD
+
 # create the directories needed by the environment
 mkdir -p $HOME/.local/share/fonts
 mkdir -p $HOME/.local/bin
@@ -38,5 +39,6 @@ chsh -s /usr/bin/zsh $USER
 
 # install starship and configure zsh
 curl -sS https://starship.rs/install.sh | sh
-cd $working_dir cp ./zsh/.zshrc $HOME
+cd $working_dir 
+cp ./zsh/.zshrc $HOME
 cat ./zsh/zshrc_append >> $HOME/.zshrc
