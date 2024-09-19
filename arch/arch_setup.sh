@@ -22,7 +22,7 @@ makepkg -si
 popd
 
 # install utilities that are going to be needed
-sudo pacman -Sy wget git bat fzf jq unzip lsd man-db fd ripgrep python3 lua51 luarocks eslint_d rust composer prettier nodejs npm jre-openjdk jdk-openjdk openjdk-doc python-virtualenv perl python-black tree-sitter julia python-pip python-neovim ruby lsd
+sudo pacman -Sy wget git bat fzf jq unzip lsd man-db fd ripgrep python3 lua51 luarocks eslint_d rust composer prettier nodejs npm jdk-openjdk openjdk-doc python-virtualenv perl python-black tree-sitter julia python-pip python-neovim ruby lsd
 
 # configure nodejs and npm for local user 
 npm set prefix="$HOME/.local"
