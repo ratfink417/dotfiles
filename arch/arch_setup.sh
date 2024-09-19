@@ -58,5 +58,5 @@ cp -R ../neovim $HOME/.config/nvim
 # install and configure tmux
 sudo pacman -S tmux 
 yay -S tmux-plugin-manager
-cp ../tmux/.tmux $HOME
+cp -R ../tmux/.tmux $HOME
 cp ../tmux/.tmux.conf $HOME
