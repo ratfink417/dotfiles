@@ -22,7 +22,7 @@ makepkg -si
 popd
 
 # install utilities that are going to be needed
-sudo pacman -Sy --noconfirm wget git bat fzf jq unzip lsd man-db fd ripgrep python3 lua51 luarocks eslint_d rust composer prettier nodejs npm jdk-openjdk openjdk-doc python-virtualenv perl python-black tree-sitter julia python-pip python-neovim ruby lsd gdb
+sudo pacman -Sy --noconfirm wget git bat fzf jq unzip lsd man-db fd ripgrep python3 lua51 luarocks eslint_d rust composer prettier nodejs npm jdk-openjdk openjdk-doc python-virtualenv perl python-black tree-sitter julia python-pip python-neovim ruby lsd gdb llvm lldb
 
 # configure nodejs and npm for local user 
 npm set prefix="$HOME/.local"
@@ -69,3 +69,8 @@ cd $HOME/.virtualenvs
 python - m venv debugpy
 debugpy/bin/python -m pip install debugpy
 popd
+
+# set up lldb debugging for c/cpp/rust 
+sudo echo "ptrace_scope=0" >> /etc/sysctl.conf
+sudo sysctl -p
+cp ./neovim/c_rust.lua $HOME/.config/nvim/lua/plugins/dap/c_rust.lua 
