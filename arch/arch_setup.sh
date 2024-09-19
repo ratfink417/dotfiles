@@ -71,6 +71,6 @@ debugpy/bin/python -m pip install debugpy
 popd
 
 # set up lldb debugging for c/cpp/rust 
-sudo echo "ptrace_scope=0" >> /etc/sysctl.conf
+sudo echo "kernel.yama.ptrace_scope=0" >> /etc/sysctl.conf
 sudo sysctl -p
 cp ./neovim/c_rust.lua $HOME/.config/nvim/lua/plugins/dap/c_rust.lua 
