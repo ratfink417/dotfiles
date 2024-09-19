@@ -6,6 +6,7 @@ working_dir=$PWD
 mkdir -p $HOME/.local/share/fonts
 mkdir -p $HOME/.local/bin
 mkdir -p $HOME/.local/yay
+mkdir -p $HOME/.config
 
 # create var to reference dirs
 local_fonts_dir=$HOME/.local/share/fonts
@@ -21,7 +22,11 @@ makepkg -si
 popd
 
 # install utilities that are going to be needed
-sudo pacman -Sy wget git bat fzf jq unzip lsd man-db
+sudo pacman -Sy wget git bat fzf jq unzip lsd man-db fd ripgrep python3 lua51 luarocks eslint_d rust composer prettier nodejs npm jre-openjdk jdk-openjdk openjdk-doc python-virtualenv perl python-black tree-sitter julia python-pip python-neovim ruby
+
+# configure nodejs and npm for local user 
+npm set prefix="$HOME/.local"
+npm install -g neovim
 
 # install man pages
 sudo mandb
@@ -42,5 +47,10 @@ chsh -s /usr/bin/zsh $USER
 # install starship and configure zsh
 curl -sS https://starship.rs/install.sh | sh
 cd $working_dir 
-cp ./zsh/.zshrc $HOME
-cat ./zsh/zshrc_append >> $HOME/.zshrc
+cp ../zsh/.zshrc $HOME
+cat ./zshrc_append >> $HOME/.zshrc
+cp ../starship/starship.toml $HOME/.config/starship.toml
+
+# install neovim and copy the config folder
+sudo pacman -S neovim
+cp -R ../neovim $HOME/.config
