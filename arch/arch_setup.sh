@@ -66,7 +66,7 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 pushd
 mkdir $HOME/.virtualenvs
 cd $HOME/.virtualenvs
-python - m venv debugpy
+python -m venv debugpy
 debugpy/bin/python -m pip install debugpy
 popd
 
