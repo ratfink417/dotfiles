@@ -61,3 +61,11 @@ yay -S tmux-plugin-manager
 cp -R ../tmux/.tmux $HOME
 cp ../tmux/.tmux.conf $HOME
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+# set up debugpy virtual environment for python-dap
+pushd
+mkdir $HOME/.virtualenvs
+cd $HOME/.virtualenvs
+python - m venv debugpy
+debugpy/bin/python -m pip install debugpy
+popd
