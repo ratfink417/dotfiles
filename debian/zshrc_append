@@ -5,6 +5,7 @@ alias ll='ls -l'
 alias la='ls -A'
 alias l='ls -CF'
 alias vim=$HOME/.local/bin/nvim.appimage
+alias fd=fdfind
 
 # run starship
 eval "$(starship init zsh)"
