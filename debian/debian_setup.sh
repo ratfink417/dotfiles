@@ -6,7 +6,7 @@ working_dir=$PWD
 sudo apt install wget curl git fzf jq unzip lsd man-db fd-find python3 lua5.1 luarocks composer nodejs npm default-jdk  python3-virtualenv python3.11-venv perl  python3-pip python3-neovim ruby llvm lldb fontconfig zsh neovim tmux 
 
 # install neovim 
-wget -O $HOME/.local/bin/nvim.appimage
+wget -O $HOME/.local/bin/nvim.appimage https://github.com/neovim/neovim/releases/download/v0.10.1/nvim.appimage
 chmod u+x $HOME/.local/bin/nvim.appimage
 
 # install bat
