@@ -3,10 +3,10 @@
 working_dir=$PWD
 
 # install utilities that are going to be needed
-sudo apt install wget curl git fzf jq unzip lsd man-db fd-find python3 lua5.1 luarocks composer nodejs npm default-jdk  python3-virtualenv python3.11-venv perl  python3-pip python3-neovim ruby llvm lldb fontconfig zsh neovim tmux 
+sudo apt install wget curl git fzf jq unzip lsd man-db fd-find python3 lua5.1 luarocks composer nodejs npm default-jdk  python3-virtualenv python3.11-venv perl  python3-pip python3-neovim ruby llvm lldb fontconfig zsh tmux 
 
 # install neovim 
-wget -O $HOME/.local/bin/nvim.appimage https://github.com/neovim/neovim/releases/download/v0.10.1/nvim.appimage
+wget -O $HOME/.local/bin/nvim.appimage https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage
 chmod u+x $HOME/.local/bin/nvim.appimage
 
 # install bat
