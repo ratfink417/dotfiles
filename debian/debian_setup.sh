@@ -20,10 +20,37 @@ sudo dpkg -i /tmp/ripgrep.deb
 # rust 
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
+# c sharp 
+sudo apt install mono-complete
+
+# install docker
+## Add Docker's official GPG key:
+sudo apt-get update
+sudo apt-get install ca-certificates curl
+sudo install -m 0755 -d /etc/apt/keyrings
+sudo curl -fsSL https://download.docker.com/linux/debian/gpg -o /etc/apt/keyrings/docker.asc
+sudo chmod a+r /etc/apt/keyrings/docker.asc
+
+## Add the repository to Apt sources:
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/debian \
+  $(. /etc/os-release && echo "bookworm") stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt-get update
+
 # create the directories needed by the environment
 mkdir -p $HOME/.local/share/fonts
 mkdir -p $HOME/.local/bin
 mkdir -p $HOME/.config
+
+# install lazydocker
+curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash
+
+# install lazygit 
+LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
+curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_x86_64.tar.gz"
+tar xf lazygit.tar.gz lazygit
+sudo install lazygit /usr/local/bin
 
 # create var to reference dirs
 local_fonts_dir=$HOME/.local/share/fonts
