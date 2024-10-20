@@ -17,5 +17,5 @@ vim.g.loaded_perl_provider = 0
 require("config.lazy")
 require("config.keymappings")
 
--- load dap plugins
+-- load gdb dap
 require('plugins.dap.c_rust')

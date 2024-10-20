@@ -2,13 +2,22 @@ local ok, dap = pcall(require, 'dap')
 if not ok then
     return
 end
-
+-- adapters section
+-- 	lldb
 dap.adapters.lldb = {
   type = 'executable',
   command = '/usr/bin/lldb-vscode-16', -- adjust as needed, must be absolute path
   name = 'lldb'
 }
 
+--	bash
+dap.adapters.bashdb = {
+  type = 'executable';
+  command = vim.fn.stdpath("data") .. '/mason/packages/bash-debug-adapter/bash-debug-adapter';
+  name = 'bashdb';
+}
+
+-- configurations section
 dap.configurations.c = {
   {
     name = 'Launch',
@@ -29,9 +38,7 @@ dap.configurations.c = {
     --
     -- Otherwise you might get the following error:
     --
-    --    Error on launch: Failed to attach to the target process
-    --
-    -- But you should be aware of the implications:
+    --    Error on launch: Failed to attach to the target process But you should be aware of the implications:
     -- https://www.kernel.org/doc/html/latest/admin-guide/LSM/Yama.html
     -- runInTerminal = false,
   },
@@ -69,4 +76,26 @@ dap.configurations.rust = {
       return commands
     end,
   },
+}
+
+dap.configurations.sh = {
+  {
+    type = 'bashdb';
+    request = 'launch';
+    name = "Launch file";
+    showDebugOutput = true;
+    pathBashdb = vim.fn.stdpath("data") .. '/mason/packages/bash-debug-adapter/extension/bashdb_dir/bashdb';
+    pathBashdbLib = vim.fn.stdpath("data") .. '/mason/packages/bash-debug-adapter/extension/bashdb_dir';
+    trace = true;
+    file = "${file}";
+    program = "${file}";
+    cwd = '${workspaceFolder}';
+    pathCat = "cat";
+    pathBash = "/bin/bash";
+    pathMkfifo = "mkfifo";
+    pathPkill = "pkill";
+    args = {};
+    env = {};
+    terminalKind = "integrated";
+  }
 }

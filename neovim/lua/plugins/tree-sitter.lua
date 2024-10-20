@@ -6,7 +6,7 @@ return {
 		config.setup({
 			auto_install = true,
 			ignore_install = {},
-			ensure_installed = {},
+			ensure_installed = {"c", "lua", "rust", "python", "ron"},
 			modules = {},
 			sync_install = false,
 			highlight = { enable = true },
