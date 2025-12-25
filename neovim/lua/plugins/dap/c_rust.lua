@@ -6,14 +6,14 @@ end
 -- 	lldb
 dap.adapters.lldb = {
   type = 'executable',
-  command = '/usr/bin/lldb-vscode-16', -- adjust as needed, must be absolute path
+  command = '/usr/bin/lldb', -- adjust as needed, must be absolute path
   name = 'lldb'
 }
 
 --	bash
 dap.adapters.bashdb = {
   type = 'executable';
-  command = vim.fn.stdpath("data") .. '/mason/packages/bash-debug-adapter/bash-debug-adapter';
+  command = '/usr/bin/bashdb',
   name = 'bashdb';
 }
 
