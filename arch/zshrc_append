@@ -1,10 +1,18 @@
 # aliases
-alias cat='bat'
 alias ls='lsd'
 alias ll='ls -l'
 alias la='ls -A'
 alias l='ls -CF'
 alias vim='nvim'
+
+# fzf preview defaults
+export FZF_DEFAULT_OPTS="--ansi --preview-window 'right:60%' --preview 'test -f {} && bat --color=always --style=header,grid --line-range :300 {}'"
+
+source <(fzf --zsh)
+
+# set up fzf-tab zsh plugin
+autoload -U compinit; compinit
+source ~/.local/share/fzf-tab/fzf-tab.plugin.zsh
 
 # run starship
 eval "$(starship init zsh)"

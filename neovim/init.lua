@@ -19,3 +19,6 @@ require("config.keymappings")
 
 -- load gdb dap
 require('plugins.dap.c_rust')
+
+-- use global clipboard
+vim.opt.clipboard:append('unnamedplus')

@@ -5,8 +5,7 @@ working_dir=$PWD
 # create the directories needed by the environment
 mkdir -p $HOME/.local/share/fonts
 mkdir -p $HOME/.local/bin
-mkdir -p $HOME/.local/yay
-mkdir -p $HOME/.config
+mkdir -p $HOME/.local/yay mkdir -p $HOME/.config
 
 # create var to reference dirs
 local_fonts_dir=$HOME/.local/share/fonts
@@ -69,6 +68,9 @@ cd $HOME/.virtualenvs
 python -m venv debugpy
 debugpy/bin/python -m pip install debugpy
 popd
+
+# install fzf-tab completion
+git clone https://github.com/Aloxaf/fzf-tab $HOME/.local/share/fzf-tab
 
 # set up lldb debugging for c/cpp/rust 
 sudo echo "kernel.yama.ptrace_scope=0" >> /etc/sysctl.conf
