@@ -6,7 +6,7 @@ WINIT_X11_SCALE_FACTOR = "1"
 dynamic_padding = true
 decorations = "full"
 title = "Alacritty@CachyOS"
-opacity = 0.98
+opacity = 0.90
 decorations_theme_variant = "Dark"
 
 [window.dimensions]
@@ -25,28 +25,28 @@ multiplier = 3
 draw_bold_text_with_bright_colors = true
 
 [colors.primary]
-background = "0x2E3440"
-foreground = "0xD8DEE9"
+background = "#000000"
+foreground = "#FFFFFF"
 
 [colors.normal]
-black = "0x3B4252"
-red = "0xBF616A"
-green = "0xA3BE8C"
-yellow = "0xEBCB8B"
-blue = "0x81A1C1"
-magenta = "0xB48EAD"
-cyan = "0x88C0D0"
-white = "0xE5E9F0"
+black = "#1a1a1a"
+red = "#f4005f"
+green = "#98e024"
+yellow = "#fa8419"
+blue = "#9d65ff"
+magenta = "#f4005f"
+cyan = "#58d1eb"
+white = "#c4c5b5"
 
 [colors.bright]
-black = "0x4C566A"
-red = "0xBF616A"
-green = "0xA3BE8C"
-yellow = "0xEBCB8B"
-blue = "0x81A1C1"
-magenta = "0xB48EAD"
-cyan = "0x8FBCBB"
-white = "0xECEFF4"
+black = "#625e4c"
+red = "#f4005f"
+green = "#98e024"
+yellow = "#e0d561"
+blue = "#9d65ff"
+magenta = "#f4005f"
+cyan = "#58d1eb"
+white = "#f6f6ef"
 
 [font]
 size = 12
