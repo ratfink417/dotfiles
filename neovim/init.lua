@@ -1,3 +1,4 @@
+local colorscheme = require "plugins.colorscheme"
 -- vim key bindings
 vim.g.mapleader = " "
 vim.keymap.set("i", "jj", "<Esc>")
@@ -22,3 +23,6 @@ require('plugins.dap.c_rust')
 
 -- use global clipboard
 vim.opt.clipboard:append('unnamedplus')
+
+-- set colorscheme options
+vim.cmd 'colorscheme monokai-nightasty'
